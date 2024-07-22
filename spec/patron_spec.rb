@@ -12,4 +12,10 @@ RSpec.describe Patron do
       expect(@patron_1.spending_money).to eq(20)
     end
   end
+
+  describe '#interests' do 
+    it 'has no interests right now' do 
+    expect(@patron_1.interests).to eq([])
+    end
+  end
 end
