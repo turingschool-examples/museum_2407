@@ -7,4 +7,8 @@ attr_reader :name, :spending_money, :interests
     @spending_money = spending_money
     @interests = []
   end
+
+  def add_interests(exhibit)
+    @interests << exhibit
+  end
 end
