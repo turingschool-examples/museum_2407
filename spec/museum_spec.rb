@@ -24,7 +24,7 @@ RSpec.describe Museum do
         end
     end
 
-    describe '@add exhibits' do
+    describe '#add exhibits' do
         it 'can add exhibits' do
 
             @dmns.add_exhibit("Gems and Minerals")
