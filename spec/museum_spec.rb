@@ -60,6 +60,20 @@ RSpec.describe Museum do
         end
     end
 
+    describe 'patrons' do
+        it 'has patrons' do
+            expect(@dmns.patrons).to eq []
+        end
+
+        it 'can add patrons' do
+            @dmns.admit(@patron_1)
+            @dmns.admit(@patron_2)
+            @dmns.admit(@patron_3)
+
+            expect(@dmns.patrons).to eq [@patron_1, @patron_2, @patron_3]
+        end
+    end
+
 
 
 end
