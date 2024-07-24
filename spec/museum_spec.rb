@@ -88,7 +88,7 @@ RSpec.describe Museum do
             @dmns.admit(@patron_2)
             @dmns.admit(@patron_3)
 
-            expect(@dmns.patrons_by_exhibit_interest).to be be_an_instance_of Hash
+            expect(@dmns.patrons_by_exhibit_interest).to be_an_instance_of Hash
         end
     end
 

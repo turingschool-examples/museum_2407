@@ -24,4 +24,8 @@ class Museum
     def admit(patron)
         @patrons << patron
     end
+
+    def patrons_by_exhibit_interest
+        exhibits.zip(patrons).to_h
+    end
 end
