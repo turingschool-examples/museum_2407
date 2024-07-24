@@ -15,6 +15,10 @@ RSpec.describe Exhibit do
             expect(@exhibit.name).to eq "Gems and Minerals"
         end
 
+        it 'has a price' do
+            expect(@exhibit.cost).to eq 0
+        end
+
 
     end
 
