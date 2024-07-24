@@ -3,6 +3,8 @@ require './lib/exhibit'
 RSpec.describe Exhibit do
     before(:each) do
         @exhibit = Exhibit.new({name: "Gems and Minerals", cost: 0})
+        @dead_sea_scrolls = Exhibit.new({name: "Dead Sea Scrolls", cost: 10})
+        @imax = Exhibit.new({name: "IMAX",cost: 15})
 
     end
 
@@ -18,9 +20,8 @@ RSpec.describe Exhibit do
         it 'has a price' do
             expect(@exhibit.cost).to eq 0
         end
-
-
     end
+
 
 
 

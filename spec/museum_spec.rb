@@ -5,6 +5,9 @@ require './lib/exhibit'
 RSpec.describe Museum do
     before(:each) do
         @dmns = Museum.new("Denver Museum of Nature and Science")
+        @exhibit = Exhibit.new({name: "Gems and Minerals", cost: 0})
+        @dead_sea_scrolls = Exhibit.new({name: "Dead Sea Scrolls", cost: 10})
+        @imax = Exhibit.new({name: "IMAX",cost: 15})
     end
 
     describe 'initalize' do
@@ -20,6 +23,20 @@ RSpec.describe Museum do
             expect(@dmns.exhibits).to eq []
         end
     end
+
+    describe '@add exhibits' do
+        it 'can add exhibits' do
+
+            @dmns.add_exhibit("Gems and Minerals")
+            @dmns.add_exhibit("Dead Sea Scrolls")
+            @dmns.add_exhibit("IMAX")
+            new_exhibits = ["Gems and Minerals", "Dead Sea Scrolls", "IMAX"]
+
+            expect(@dmns.exhibits).to eq new_exhibits
+            
+        end
+    end
+
 
 
 
