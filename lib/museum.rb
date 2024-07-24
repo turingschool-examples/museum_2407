@@ -12,10 +12,10 @@ class Museum
 
     def recommend_exhibits(patron)
         matching_interests = []
-        patron.interests.each do |interest|
-
-            if @museum.exhibits.include?(interest)
-            matching_interests << 
+        @exhibits.each do |exhibit|
+           if patron.interests.include?(exhibit.name)
+                matching_interests << exhibit
+           end
         end
         p matching_interests
     end

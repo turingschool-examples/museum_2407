@@ -43,21 +43,20 @@ RSpec.describe Museum do
 
     describe '#recommend exhibits' do
         it 'can recommend exhibits by interest' do
-            @dmns.add_exhibit("Gems and Minerals")
-            @dmns.add_exhibit("Dead Sea Scrolls")
-            @dmns.add_exhibit("IMAX")
+            @dmns.add_exhibit(@gems)
+            @dmns.add_exhibit(@dead_sea_scrolls)
+            @dmns.add_exhibit(@imax)
 
 
             @patron_1.add_interest("Dead Sea Scrolls")
             @patron_1.add_interest("Gems and Minerals")
             @patron_2.add_interest("IMAX")
 
-            bob_list = [@dead_sea_scrolls, @gems]
+            bob_list = [@gems, @dead_sea_scrolls]
             sally_list = [@imax]
 
             expect(@dmns.recommend_exhibits(@patron_1)).to eq bob_list
             expect(@dmns.recommend_exhibits(@patron_2)).to eq sally_list
-
         end
     end
 
