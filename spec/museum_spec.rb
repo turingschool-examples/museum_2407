@@ -112,6 +112,10 @@ RSpec.describe Museum do
             expect(@dmns.ticket_lottery_contestants(@dead_sea_scrolls)).to eq([@patron_1, @patron_3])
         end
 
+        it 'draws lottery winner' do
+            expect(@dmns.draw_lottery_winner(@dead_sea_scrolls)).to eq(@patron_1 || @patron_3)
+        end
+
     end
 
 
