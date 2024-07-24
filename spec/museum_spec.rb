@@ -31,10 +31,10 @@ RSpec.describe Museum do
     describe '#add exhibits' do
         it 'can add exhibits' do
 
-            @dmns.add_exhibit("Gems and Minerals")
-            @dmns.add_exhibit("Dead Sea Scrolls")
-            @dmns.add_exhibit("IMAX")
-            new_exhibits = ["Gems and Minerals", "Dead Sea Scrolls", "IMAX"]
+            @dmns.add_exhibit(@gems)
+            @dmns.add_exhibit(@dead_sea_scrolls)
+            @dmns.add_exhibit(@imax)
+            new_exhibits = [@gems, @dead_sea_scrolls, @imax]
 
             expect(@dmns.exhibits).to eq new_exhibits
             
