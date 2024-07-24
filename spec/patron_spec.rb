@@ -3,6 +3,7 @@ require './lib/patron'
 RSpec.describe Patron do
     before(:each) do
         @patron_1 = Patron.new("Bob", 20)
+        @patron_2 = Patron.new("Sally", 20)
     end
 
     describe '#initalize' do
@@ -32,9 +33,8 @@ RSpec.describe Patron do
 
             expect(@patron_1.interests).to eq ["Dead Sea Scrolls", "Gems and Minerals"]
         end
-
-
     end
+
 
 
 
