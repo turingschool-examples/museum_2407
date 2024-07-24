@@ -12,6 +12,7 @@ RSpec.describe Museum do
 
         @patron_1 = Patron.new("Bob", 20)
         @patron_2 = Patron.new("Sally", 20)
+        @patron_3 = Patron.new("Johnny", 5)
     end
 
     describe 'initalize' do
@@ -71,6 +72,23 @@ RSpec.describe Museum do
             @dmns.admit(@patron_3)
 
             expect(@dmns.patrons).to eq [@patron_1, @patron_2, @patron_3]
+        end
+
+        it 'produces hash of exhibits and interested patrons' do
+            @dmns.add_exhibit(@gems)
+            @dmns.add_exhibit(@dead_sea_scrolls)
+            @dmns.add_exhibit(@imax)
+
+            @patron_1.add_interest("Gems and Minerals")
+            @patron_1.add_interest("Gems and Minerals")
+            @patron_2.add_interest("Dead Sea Scrolls")
+            @patron_3.add_interest("Dead Sea Scrolls")
+
+            @dmns.admit(@patron_1)
+            @dmns.admit(@patron_2)
+            @dmns.admit(@patron_3)
+
+            expect(@dmns.patrons_by_exhibit_interest).to be be_an_instance_of Hash
         end
     end
 
