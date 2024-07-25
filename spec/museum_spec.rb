@@ -23,4 +23,12 @@ RSpec.describe Museum do
             expect(@dmns.exhibits.empty?).to be_a (true)
         end
     end
+
+    describe '#add_exhibit()' do
+    
+    end
+    
+    describe '#recommend_exhibits()' do
+
+    end
 end
