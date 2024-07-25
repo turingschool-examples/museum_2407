@@ -20,5 +20,9 @@ RSpec.describe Patron do
         it 'holds a money_spent attribute' do
             expect(@patron.money_spent).to eq (20)
         end
+
+        it 'should hold an interst array, initilized to be empty' do
+            expect(@patron.interests.empty?).to eq (true)
+        end
     end
 end
