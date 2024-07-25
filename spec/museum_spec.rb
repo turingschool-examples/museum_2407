@@ -84,7 +84,7 @@ RSpec.describe Museum do
         end
 
         it 'has an empty array for lottery ticket contestants' do
-            expect(@dmns.ticket_lottery_contestants(dead_sea_scrolls)).to eq []
+            expect(@dmns.ticket_lottery_contestants(@dead_sea_scrolls)).to eq []
         end
     end
 

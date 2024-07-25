@@ -5,6 +5,7 @@ class Museum
         @name = name
         @exhibits = []
         @patrons = []
+        @ticket_lottery_contestants = []
     end
 
     def admit(patron)
@@ -38,4 +39,9 @@ class Museum
             patron.interests.include?(exhibit.name)
         end
     end
+
+    def ticket_lottery_contestants(exhibit)
+        @ticket_lottery_contestants
+    end
+
 end
