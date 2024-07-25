@@ -34,6 +34,10 @@ RSpec.describe Museum do
             expect{@dmns.add_exhibit(gems_and_minerals)}.to change{@dmns.exhibits.empty?}.from(true).to(false)
             expect(@dmns.exhibits[0].name).to eq ("Gems and Minerals")
         end
+        it 'should not add arguments if they are not Exhibit objects' do
+            @dmns.add_exhibit("string")
+            expect(@dmns.exhibits.empty?).to eq (true)
+        end
     end
     
     describe '#recommend_exhibits()' do
