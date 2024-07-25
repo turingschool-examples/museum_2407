@@ -120,6 +120,13 @@ RSpec.describe Museum do
             expect(@dmns.draw_lottery_winner(@gems)).to eq(nil)
         end
 
+        it 'announces lottery winner' do
+
+            
+            stub_winner = "Bob has won the IMAX edhibit lottery"
+            expect(@dmns.announce_lottery_winner(@imax)).to eq(stub_winner)
+        end
+
     end
 
 
