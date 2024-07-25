@@ -11,10 +11,12 @@ class Museum
     end
 
     def recommend_exhibits(patron)
-        # look through the patrons interests
-        # look at each interests
-        # create an array with all of the exhibits that match interest
-        require 'pry'; binding.pry
-        
+        recommended = []
+        @exhibits.each do |exhibit|
+            if patron.interests.include? exhibit.name
+            recommended << exhibit
+            end
+        end
+        recommended #.sort_by { |exhibit| exhibit.name }
     end
 end
