@@ -55,6 +55,10 @@ RSpec.describe Museum do
         expect(@dmns.recommend_exhibits(@patron_1)).to eq [@gems_and_minerals, @dead_sea_scrolls]
     end
 
+    it 'has patrons as an empty array' do
+        expect(@dmns.patrons).to eq []
+    end
+
     it 'can admit patrons' do
         @dmns.admit(patron_1)
         @dmns.admit(patron_2)
