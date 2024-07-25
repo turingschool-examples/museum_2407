@@ -7,6 +7,14 @@ RSpec.configure do |config|
 end
 
 RSpec.describe Museum do
+    before(:each) do
+        @dmns = Museum.new("Denver Museum of Nature and Science")
+    end
 
-    
+    describe 'instantiate' do
+        it 'exists' do
+            expect(@dmns).to be_an_instance_of Museum
+        end
+    end
+
 end
