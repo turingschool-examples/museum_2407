@@ -1,8 +1,8 @@
 class Exhibit
     attr_reader :name, :cost
 
-    def initialize(name, cost = 0)
-        @name = name
-        @cost = cost
+    def initialize(exhibit)
+        @name = exhibit[:name]
+        @cost = exhibit[:cost]
     end
 end

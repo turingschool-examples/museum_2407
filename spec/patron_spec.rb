@@ -5,6 +5,6 @@ RSpec.configure do |config|
     config.formatter = :documentation
 end
 
-RSspec.describe do
+RSpec.describe do
     
 end
