@@ -4,13 +4,13 @@ RSpec.configure do |config|
  config.formatter = :documentation 
 end
 
-RSpec.describe Exhibit do 
+RSpec.describe Patron do 
     before(:each) do
-        @patron_1 = Patron.new("Bob", 20)
+        @patron = Patron.new("Bob", 20)
     end
     describe '#initialize()' do
         it 'creates an instance of an Patron object' do 
-            expect(@exhibit).to be_a Patron
+            expect(@patron).to be_a Patron
         end
 
         it 'holds a name attribute' do
