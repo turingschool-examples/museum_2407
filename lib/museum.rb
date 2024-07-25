@@ -31,7 +31,6 @@ class Museum
             patrons_by_exhibit_interest[exhibit] = interested_patrons(exhibit)
         end
         patrons_by_exhibit_interest
-        require 'pry'; binding.pry
     end
 
     def interested_patrons(exhibit)
