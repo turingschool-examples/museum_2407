@@ -7,6 +7,10 @@ class Museum
         @patrons = []
     end
 
+    def admit(patron)
+        @patrons << patron
+    end
+
     def add_exhibit(exhibit)
         @exhibits << exhibit
     end
