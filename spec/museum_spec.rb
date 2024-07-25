@@ -19,6 +19,10 @@ RSpec.describe Museum do
         it 'has a name' do
             expect(@dmns.name).to eq "Denver Museum of Nature and Science"
         end
+
+        it 'has exhibits as an empty array' do
+            expect(@dmns.exhibits).to eq []
+        end
     end
 
 end
