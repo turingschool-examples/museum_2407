@@ -131,8 +131,6 @@ RSpec.describe Museum do
             no_winner = "No winners for this lottery"
             expect(@dmns.announce_lottery_winner(@gems)).to eq(no_winner)
         end
-
-
     end
 
 

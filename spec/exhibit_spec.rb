@@ -21,8 +21,4 @@ RSpec.describe Exhibit do
             expect(@exhibit.cost).to eq 0
         end
     end
-
-
-
-
 end

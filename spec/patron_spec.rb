@@ -34,10 +34,4 @@ RSpec.describe Patron do
             expect(@patron_1.interests).to eq ["Dead Sea Scrolls", "Gems and Minerals"]
         end
     end
-
-
-
-
-
-
 end
