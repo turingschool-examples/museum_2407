@@ -25,4 +25,17 @@ RSpec.describe Patron do
             expect(@patron.interests.empty?).to eq (true)
         end
     end
+
+    describe '#add_interst()' do
+        it 'should add argument to intersts array' do
+            @patron.add_interest("Dead Sea Scrolls")
+            expect(@patron.intersts[0]).to eq ("Dead Sea Scrolls")
+            
+            @patron.add_interest("Gems and Minerals")
+            expect(@patron.intersts[1]).to eq ("Dead Sea Scrolls")
+            expect(@patron.intersts[2]).to eq (nil)
+
+            expect(@patron.intersts).to eq (["Dead Sea Scrolls", "Gems and Minerals"])
+        end
+    end
 end
