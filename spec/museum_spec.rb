@@ -20,7 +20,7 @@ RSpec.describe Museum do
 
         it 'has an exhibits attribute set to hold an empty array' do
             expect(@dmns.exhibits).to be_a (Array)
-            expect(@dmns.exhibits.empty?).to be_a (true)
+            expect(@dmns.exhibits.empty?).to eq (true)
         end
     end
 
