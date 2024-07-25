@@ -6,6 +6,10 @@ RSpec.configure do |config|
 end
 
 RSpec.describe Exhibit do
+    before(:each) do
+        exhibit = Exhibit.new({name: "Gems and Minerals", cost: 0})
+    end
+    
     describe 'instantiate' do
         it 'exists' do
             expect(@exhibit).to be_an_instance_of Exhibit
