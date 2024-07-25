@@ -20,6 +20,9 @@ RSpec.describe Museum do
         
         @patron_2 = Patron.new("Sally", 20)
         @patron_2.add_interest("IMAX")
+
+        @patron_3 = Patron.new("Johnny", 5)
+        @patron_3.add_interest("Dead Sea Scrolls")
     end
 
     describe 'instantiate' do
@@ -50,6 +53,15 @@ RSpec.describe Museum do
         @dmns.add_exhibit(@imax)
 
         expect(@dmns.recommend_exhibits(@patron_1)).to eq [@gems_and_minerals, @dead_sea_scrolls]
+    end
+
+    it 'can admit patrons' do
+        @dmns.admit(patron_1)
+        @dmns.admit(patron_2)
+        @dmns.admit(patron_3)
+
+        expect(@dmns.patrons).to eq [patron_1, patron_2, patron_3]
+
     end
 
 end
