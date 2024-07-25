@@ -17,6 +17,6 @@ class Museum
             recommended << exhibit
             end
         end
-        recommended #.sort_by { |exhibit| exhibit.name }
+        recommended
     end
 end
