@@ -39,33 +39,37 @@ RSpec.describe Museum do
         end
     end
 
-    it 'can add exhibits' do
-        @dmns.add_exhibit(@gems_and_minerals)
-        @dmns.add_exhibit(@dead_sea_scrolls)
-        @dmns.add_exhibit(@imax)
+    describe 'exhibits'do
+        it 'can add exhibits' do
+            @dmns.add_exhibit(@gems_and_minerals)
+            @dmns.add_exhibit(@dead_sea_scrolls)
+            @dmns.add_exhibit(@imax)
 
-        expect(@dmns.exhibits).to eq [@gems_and_minerals, @dead_sea_scrolls, @imax]
+            expect(@dmns.exhibits).to eq [@gems_and_minerals, @dead_sea_scrolls, @imax]
+        end
+
+        it 'can recommend exhibits' do
+            @dmns.add_exhibit(@gems_and_minerals)
+            @dmns.add_exhibit(@dead_sea_scrolls)
+            @dmns.add_exhibit(@imax)
+
+            expect(@dmns.recommend_exhibits(@patron_1)).to eq [@gems_and_minerals, @dead_sea_scrolls]
+        end 
     end
 
-    it 'can recommend exhibits' do
-        @dmns.add_exhibit(@gems_and_minerals)
-        @dmns.add_exhibit(@dead_sea_scrolls)
-        @dmns.add_exhibit(@imax)
+    
+    describe 'patrons' do
+        it 'has patrons as an empty array' do
+            expect(@dmns.patrons).to eq []
+        end
 
-        expect(@dmns.recommend_exhibits(@patron_1)).to eq [@gems_and_minerals, @dead_sea_scrolls]
-    end
+        it 'can admit patrons' do
+            @dmns.admit(@patron_1)
+            @dmns.admit(@patron_2)
+            @dmns.admit(@patron_3)
 
-    it 'has patrons as an empty array' do
-        expect(@dmns.patrons).to eq []
-    end
-
-    it 'can admit patrons' do
-        @dmns.admit(patron_1)
-        @dmns.admit(patron_2)
-        @dmns.admit(patron_3)
-
-        expect(@dmns.patrons).to eq [patron_1, patron_2, patron_3]
-
+            expect(@dmns.patrons).to eq [@patron_1, @patron_2, @patron_3]
+        end
     end
 
 end
