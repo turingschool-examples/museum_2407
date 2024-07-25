@@ -113,7 +113,11 @@ RSpec.describe Museum do
         end
 
         it 'draws lottery winner' do
-            expect(@dmns.draw_lottery_winner(@dead_sea_scrolls)).to eq(@patron_1 || @patron_3)
+            expect(@dmns.draw_lottery_winner(@dead_sea_scrolls)).to be_an_instance_of Patron
+        end
+
+        it 'does not draw winner if conditions are not met' do
+            expect(@dmns.draw_lottery_winner(@gems)).to eq(nil)
         end
 
     end

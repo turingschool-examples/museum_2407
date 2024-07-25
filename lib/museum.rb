@@ -38,4 +38,10 @@ class Museum
         end
         p contestants
     end
+
+    def draw_lottery_winner(exhibit)
+        contestants = ticket_lottery_contestants(exhibit)
+        return nil if contestants.empty?
+        contestants.sample  
+    end
 end
