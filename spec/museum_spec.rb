@@ -121,9 +121,9 @@ RSpec.describe Museum do
         end
 
         it 'announces lottery winner' do
+            @patron_1.add_interest("IMAX")
 
-            
-            stub_winner = "Bob has won the IMAX edhibit lottery"
+            stub_winner = "Bob has won the IMAX exhibit lottery"
             expect(@dmns.announce_lottery_winner(@imax)).to eq(stub_winner)
         end
 
