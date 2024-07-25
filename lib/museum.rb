@@ -24,4 +24,14 @@ class Museum
         end
         recommended
     end
+
+    def patrons_by_exhibit_interest
+    
+    end
+
+    def interested_patrons(exhibit)
+        @patrons.select do |patron|
+            patron.interests.include?(exhibit.name)
+        end
+    end
 end
