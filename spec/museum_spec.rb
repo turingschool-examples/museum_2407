@@ -45,4 +45,8 @@ RSpec.describe Museum do
         expect(@dmns.exhibits).to eq [@gems_and_minerals, @dead_sea_scrolls, @imax]
     end
 
+    it 'can recommend exhibits' do
+        expect(@dmns.recommend_exhibits(patron_1)).to eq ["Dead Sea Scrolls", "Gems and Minerals"]
+    end
+
 end
