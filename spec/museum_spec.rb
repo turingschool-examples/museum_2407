@@ -110,6 +110,18 @@ RSpec.describe Museum do
             
             expect(@dmns.draw_lottery_winner(@dead_sea_scrolls)).to be_a String
         end
+
+        it 'can return nill if no contestants are eligable' do
+            @dmns.add_exhibit(@gems_and_minerals)
+            @dmns.add_exhibit(@dead_sea_scrolls)
+            @dmns.add_exhibit(@imax)
+
+            @dmns.admit(@patron_1)
+            @dmns.admit(@patron_2)
+            @dmns.admit(@patron_3)
+
+            expect(@dmns.draw_lottery_winner(@imax)).to eq nil
+        end
     end
 
 end
