@@ -98,6 +98,7 @@ RSpec.describe Museum do
             patron_1 = Patron.new("Bob", 20)
             patron_2 = Patron.new("Julia", 400)
             patron_3 = Patron.new("Chandler", 0)
+            require'pry';binding.pry
 
             patron_1.add_interest(gems_and_minerals)
 

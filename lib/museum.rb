@@ -26,4 +26,18 @@ class Museum
         end
         recommendations
     end
+
+    def patrons_by_exhibit_interest
+        output = Hash.new(0)
+        patrons = ObjectSpace.each_object(Patron)
+        @exhibits.each do|exhibit| 
+            output[exhibit] = []
+            patrons.each do |patron|
+                if patron.interests.include?(exhibit)
+                    output[exhibit].push(patron)
+                end
+            end
+        end
+        output
+    end
 end
