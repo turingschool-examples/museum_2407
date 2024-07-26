@@ -61,8 +61,10 @@ RSpec.describe Museum do
 
         end
 
-        it 'should not add arguments if they are not Patron objects' do
-
+        xit 'should not add arguments if they are not Patron objects' do
+            @dmns.add_exhibit("Gems and Minerals")
+            incorrect_input = ""
+            expect(@dmns.recommend_exhibits(patron_1).length).to eq (nil)
         end
 
     end
