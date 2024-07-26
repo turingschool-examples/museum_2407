@@ -67,6 +67,7 @@ class Museum
             puts "#{draw_lottery_winner(exhibit)} has won the #{exhibit} lottery!"
         else
             puts "No winners for this lottery."
+        end
     end
 
 end
