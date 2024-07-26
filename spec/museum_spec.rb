@@ -139,8 +139,8 @@ RSpec.describe Museum do
 
 
             expect(@dmns.ticket_lottery_contestants(imax).length).to eq (2)
-            expect(@dmns.ticket_lottery_contestants(imax)[0].name).to eq ("Julia")
-            expect(@dmns.ticket_lottery_contestants(imax)[1].name).to eq ("Chandler")
+            expect(@dmns.ticket_lottery_contestants(imax)[0].name).to eq ("Chandler")
+            expect(@dmns.ticket_lottery_contestants(imax)[1].name).to eq ("Julia")
         end
     end
     

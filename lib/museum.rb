@@ -40,4 +40,16 @@ class Museum
         end
         output
     end
+
+    def ticket_lottery_contestants(exhibit)
+        contestants_list = []
+        patrons = ObjectSpace.each_object(Patron)
+        patrons.each do |patron|
+            if patron.interests.include?(exhibit) && 
+                patron.money_spent < exhibit.cost 
+                contestants_list << patron
+            end
+        end
+        contestants_list
+    end
 end
