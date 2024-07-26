@@ -122,6 +122,20 @@ RSpec.describe Museum do
 
             expect(@dmns.draw_lottery_winner(@imax)).to eq nil
         end
+
+        it 'can announce the winner of the contest' do
+            @dmns.add_exhibit(@gems_and_minerals)
+            @dmns.add_exhibit(@dead_sea_scrolls)
+            @dmns.add_exhibit(@imax)
+
+            @dmns.admit(@patron_1)
+            @dmns.admit(@patron_2)
+            @dmns.admit(@patron_3)
+
+            @dmns.draw_lottery_winner(@dead_sea_scrolls)
+
+            expect(@dmns.announce_lottery_winner(@dead_sea_scrolls)).to be_a String
+        end
     end
 
 end
