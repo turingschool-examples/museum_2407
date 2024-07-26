@@ -18,7 +18,7 @@ Use TDD to create an `Exhibit` and a `Patron` class that respond to the followin
 pry(main)> require './lib/exhibit'
 # => true
 
-pry(main)> require './lib/patron'
+pry(main)> require './lib/exhibit'
 # => true
 
 pry(main)> exhibit = Exhibit.new({name: "Gems and Minerals", cost: 0})
