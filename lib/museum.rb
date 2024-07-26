@@ -52,4 +52,10 @@ class Museum
         end
         contestants_list
     end
+
+    def draw_lottery_winner(exhibit)
+        contestants_list = ticket_lottery_contestants(exhibit)
+        rand_length  = ticket_lottery_contestants(exhibit).length
+        contestants_list[rand(rand_length)]
+    end
 end

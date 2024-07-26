@@ -161,8 +161,7 @@ RSpec.describe Museum do
 
             @dmns.ticket_lottery_contestants(imax)
 
-            #allow(@dmns).to receive(:draw_lottery_winner).with(imax).and_return(patron_2)
-            allow(@dmns.draw_lottery_winner).to receive(:imax).and_return(patron_2)
+            allow(@dmns).to receive(:draw_lottery_winner).with(imax).and_return(patron_2)
         end
 
     end
