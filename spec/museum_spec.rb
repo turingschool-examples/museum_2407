@@ -169,6 +169,17 @@ RSpec.describe Museum do
     end
     
     describe '#announce_lottery_winner' do
+        it 'will return nil if no contestants are qualified for the lottery' do
+            imax = Exhibit.new({name: "IMAX",cost: 15})
+            @dmns.add_exhibit(imax)
+        end
+        
+        it 'will return #{name} has won the #{exhibit} exhibit lottery when there is a pool of canidates' do
 
+        end
+        
+        it 'will return No winners for this lottery if there are no contestants in the pool of canidates' do
+
+        end
     end
 end
