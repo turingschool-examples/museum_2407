@@ -98,7 +98,7 @@ RSpec.describe Museum do
             patron_1 = Patron.new("Bob", 20)
             patron_2 = Patron.new("Julia", 400)
             patron_3 = Patron.new("Chandler", 0)
-            require'pry';binding.pry
+            #require'pry';binding.pry
 
             patron_1.add_interest(gems_and_minerals)
 
@@ -116,8 +116,32 @@ RSpec.describe Museum do
     
     end
 
-    describe '#ticket_lottery_contestants' do
+    describe '#ticket_lottery_contestants()' do 
+        it 'generates an Array of patrons' do
+            imax = Exhibit.new({name: "IMAX",cost: 15})
+            @dmns.add_exhibit(imax)
+            
+            expect(@dmns.ticket_lottery_contestants(imax)).to be_a (Array)
+        end
+        it 'will contain a list of all patrons who are interested in an exhibit && do not hacve enough money to partake' do
+            imax = Exhibit.new({name: "IMAX",cost: 15})
+            @dmns.add_exhibit(imax)
 
+            patron_1 = Patron.new("Bob", 20)
+            patron_2 = Patron.new("Julia", 5)
+            patron_3 = Patron.new("Chandler", 14)
+            patron_4 = Patron.new("Gilfoyle", 15)
+
+            patron_1.add_interest(imax)
+            patron_2.add_interest(imax)
+            patron_3.add_interest(imax)
+            patron_4.add_interest(imax)
+
+
+            expect(@dmns.ticket_lottery_contestants(imax).length).to eq (2)
+            expect(@dmns.ticket_lottery_contestants(imax)[0].name).to eq ("Julia")
+            expect(@dmns.ticket_lottery_contestants(imax)[1].name).to eq ("Chandler")
+        end
     end
     
     describe '#draw_lottery_winner' do
