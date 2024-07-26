@@ -46,10 +46,10 @@ RSpec.describe Museum do
             dead_sea_scrolls = Exhibit.new({name: "Dead Sea Scrolls", cost: 10})
             imax = Exhibit.new({name: "IMAX",cost: 15})
             patron_1 = Patron.new("Bob", 20)
+            patron_2 = Patron.new("Julia", 400)
             @dmns.add_exhibit(gems_and_minerals)
             @dmns.add_exhibit(dead_sea_scrolls)
             @dmns.add_exhibit(imax)
-            patron_2 = Patron.new("Julia", 400)
             #require'pry';binding.pry
             expect(@dmns.recommend_exhibits(patron_1)).to eq ([])
 
@@ -66,6 +66,31 @@ RSpec.describe Museum do
             incorrect_input = true
             expect(@dmns.recommend_exhibits(incorrect_input)).to eq (nil)
         end
+    end
+
+    describe '#patrons_by_exhibit_interest' do
+        it 'returns a Hash' do
+            expect(@dmns.patrons_by_exhibit_interest).to be_a (Hash)
+        end
+        
+        it 'shows each Exhibit as its own key' do
+
+        end
+        it 'each value is an Array of Patron objects who are interested in the Exhibit key' do
+
+        end
+    
+    end
+
+    describe '#ticket_lottery_contestants' do
+
+    end
+    
+    describe '#draw_lottery_winner' do
+
+    end
+    
+    describe '#announce_lottery_winner' do
 
     end
 end

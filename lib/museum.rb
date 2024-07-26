@@ -11,7 +11,7 @@ class Museum
         @exhibits << exhibit unless exhibit.class != Exhibit
     end
 
-    def recommend_exhibits(patron)
+    def recommend_exhibits(patron) # <- REFACTOR
         if patron.class == Patron
             recommendations = []
             patron.interests.each do |interest|
