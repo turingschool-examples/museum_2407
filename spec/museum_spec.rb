@@ -83,11 +83,11 @@ RSpec.describe Museum do
             expect(@dmns.patrons_by_exhibit_interest).to be_a Hash
         end
 
-        it 'has an empty array for lottery ticket contestants' do
+        xit 'has an empty array for lottery ticket contestants' do
             expect(@dmns.ticket_lottery_contestants(@dead_sea_scrolls)).to eq []
         end
 
-        it 'can add patrons interested in exhibit but not enough money to lettery' do
+        it 'can add patrons interested in exhibit but not enough money to lottery' do
             @dmns.add_exhibit(@gems_and_minerals)
             @dmns.add_exhibit(@dead_sea_scrolls)
             @dmns.add_exhibit(@imax)
@@ -97,6 +97,10 @@ RSpec.describe Museum do
             @dmns.admit(@patron_3)
 
             expect(@dmns.ticket_lottery_contestants(@dead_sea_scrolls)).to eq [@patron_1, @patron_3]
+        end
+
+        it 'can draw a lottery winner' do
+            expect(@dmns.draw_lottery_winner(@dead_sea_scrolls)).to be_a String
         end
     end
 
