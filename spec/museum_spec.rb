@@ -144,7 +144,26 @@ RSpec.describe Museum do
         end
     end
     
-    describe '#draw_lottery_winner' do
+    describe '#draw_lottery_winner()' do
+        it 'will return a contestant randomly drawn from the return of #ticket_lottery_contestants()' do
+            imax = Exhibit.new({name: "IMAX",cost: 15})
+            @dmns.add_exhibit(imax)
+
+            patron_1 = Patron.new("Bob", 20)
+            patron_2 = Patron.new("Julia", 5)
+            patron_3 = Patron.new("Chandler", 14)
+            patron_4 = Patron.new("Gilfoyle", 15)
+
+            patron_1.add_interest(imax)
+            patron_2.add_interest(imax)
+            patron_3.add_interest(imax)
+            patron_4.add_interest(imax)
+
+            @dmns.ticket_lottery_contestants(imax)
+
+            #allow(@dmns).to receive(:draw_lottery_winner).with(imax).and_return(patron_2)
+            allow(@dmns.draw_lottery_winner).to receive(:imax).and_return(patron_2)
+        end
 
     end
     
